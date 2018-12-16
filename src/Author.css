@@ -12,7 +12,7 @@
 .author-image {
   max-width: 35px;
   height: 35px;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 .author-text h4 {

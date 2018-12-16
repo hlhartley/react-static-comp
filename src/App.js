@@ -12,7 +12,8 @@ const stories = [
     desc: 'or, Why you should care about typography',
     authImg: './louisa.png',
     authName: 'Louisa',
-    estTime: '2 min'
+    estTime: '2 min',
+    popCulture: true,
   },
   {
     img: './story2.jpg',
@@ -20,7 +21,8 @@ const stories = [
     desc: 'Examining villains in modern storytelling',
     authImg: './alternate.png',
     authName: 'Nathaniel',
-    estTime: '10 min'
+    estTime: '10 min',
+    popCulture: false,
   },
   {
     img: './story3.jpg',
@@ -28,7 +30,8 @@ const stories = [
     desc: 'Those who say otherwise just aren\'t trying hard enough.',
     authImg: './leta.png',
     authName: 'Leta',
-    estTime: '8 min'
+    estTime: '8 min',
+    popCulture: false,
   },
   {
     img: './story4.jpg',
@@ -36,19 +39,25 @@ const stories = [
     desc: 'Okay, so first of all, everybody knows fart jokes are hilarious ...',
     authImg: './pamela.png',
     authName: 'Pamela',
-    estTime: '11 min'
+    estTime: '11 min',
+    popCulture: true,
   }
 ]
+
+const popCultureStories = stories.filter((story) => {
+  return story.popCulture;
+})
 
 const App = () => {
   return (
     <div className='App'>
-      {/* add a Header component (already created) */}
-      {/* add a Banner component (already created) */}
+      <Header />
+      <Banner />
       <Stories  storiesTitle="Today's Top Stories"
                 stories={stories} />
-      {/* add another Stories component with storiesTitle 'Pop Culture', and just pass down the same stories array as the above Stories component (already created but will need some editing) */}
-      {/* add a Footer Component (you will need to create this component in the provided Footer.js file) */}
+      <Stories  storiesTitle="Pop Culture"
+                stories={popCultureStories} />
+      <Footer />
     </div>
   );
 }

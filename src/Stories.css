@@ -20,3 +20,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.author-pic {
+  border-radius: 50%;
+  height: 50px;
+}
