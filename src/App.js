@@ -3,6 +3,7 @@ import Header from './Header';
 import Banner from './Banner';
 import Stories from './Stories';
 import Footer from './Footer';
+import Counter from './Counter';
 import './App.css';
 
 const stories = [
@@ -44,22 +45,33 @@ const stories = [
   }
 ]
 
-const popCultureStories = stories.filter((story) => {
-  return story.popCulture;
-})
 
-const App = () => {
-  return (
-    <div className='App'>
-      <Header />
-      <Banner />
-      <Stories  storiesTitle="Today's Top Stories"
-                stories={stories} />
-      <Stories  storiesTitle="Pop Culture"
-                stories={popCultureStories} />
-      <Footer />
-    </div>
-  );
-}
+class App extends Component {
+  constructor() {
+    super();
+      this.state = {
+        stories:stories
+      }
+    }
+    
+  render() {
+      return (
+        <div className='App'>
+          <Header />
+          <Banner />
+          <Stories  storiesTitle="Today's Top Stories"
+                    stories={this.state.stories} />
+          <Stories  storiesTitle="Pop Culture"
+                    stories={this.state.stories}/>
+          <Footer />
+          <Counter />
+        </div>
+      );
+    }
+  }
 
 export default App;
+
+// const popCultureStories = stories.filter((story) => {
+//   return story.popCulture;
+// })
